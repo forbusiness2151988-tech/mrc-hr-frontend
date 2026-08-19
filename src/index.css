@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  @apply bg-ink-50 text-ink-900;
+}
+
+:focus-visible {
+  outline: 2px solid theme("colors.amber.500");
+  outline-offset: 2px;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-ink-800 text-white px-4 py-2 rounded-lg font-medium hover:bg-ink-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-accent {
+    @apply bg-amber-500 text-ink-950 px-4 py-2 rounded-lg font-semibold hover:bg-amber-400 transition-colors disabled:opacity-50;
+  }
+  .input-field {
+    @apply w-full border border-ink-200 rounded-lg px-3 py-2 text-sm focus:border-ink-500 focus:ring-1 focus:ring-ink-500 outline-none transition-colors bg-white;
+  }
+  .card {
+    @apply bg-white rounded-xl border border-ink-100 shadow-sm;
+  }
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  /* Used by the Mobile HR module's horizontally-scrolling tab/chip rows */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
